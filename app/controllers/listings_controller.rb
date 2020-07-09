@@ -2,7 +2,7 @@ class ListingsController < ApplicationController
   before_action :set_listing, only: [:show]
 
   def index
-    @listings = Listing.all
+    @listings = current_user.listings
     json_response(@listings)
   end
 
