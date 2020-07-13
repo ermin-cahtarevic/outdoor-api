@@ -30,4 +30,12 @@ class Message
   def self.expired_token
     'Sorry, your token has expired. Please login to continue.'
   end
+
+  def self.favourite_created
+    'Listing added to favourites successfully'
+  end
+
+  def self.favourite_deleted
+    'Listing removed from favourites successfully'
+  end
 end
