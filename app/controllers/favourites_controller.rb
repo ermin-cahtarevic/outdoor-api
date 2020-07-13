@@ -13,8 +13,7 @@ class FavouritesController < ApplicationController
   end
 
   def destroy
-    favourite = Favourite.where(favourite_params)
-    current_user.favourites.delete(favourite)
+    favourite = current_user.favourites.where(favourite_params)[0].destroy
 
     response = { message: Message.favourite_deleted }
     json_response(response, :ok)
