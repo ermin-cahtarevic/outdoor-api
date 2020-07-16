@@ -7,11 +7,11 @@ class ListingsController < ApplicationController
   end
 
   def show
-    isFavourite = current_user.favourite_listings.include?(@listing)
+    is_favourite = current_user.favourite_listings.include?(@listing)
 
     response = {
       listing: @listing,
-      isFavourite: isFavourite
+      isFavourite: is_favourite
     }
 
     json_response(response)
