@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :listing do
-    association :user
+    user_id { Faker::Number.number(10) }
     title { 'Awesome outdoor experience' }
     description { 'Awesome outdoor experience description' }
     rating { '3.5' }
