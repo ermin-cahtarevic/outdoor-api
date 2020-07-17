@@ -23,5 +23,19 @@ RSpec.describe 'Users API', type: :request do
         expect(json['auth_token']).not_to be_nil
       end
     end
+
+    context 'when invalid request' do
+      before { post '/signup', params: {}, headers: headers }
+
+      it 'does not create a new user' do
+        expect(response).to have_http_status(422)
+      end
+
+      it 'returns failure message' do
+        expect(json['message'])
+          .to match("Validation failed: Password can't be blank, Password is too short (minimum is 6 characters),
+          Name can't be blank, Name is too short (minimum is 3 characters), Email can't be blank")
+      end
+    end
   end
 end
