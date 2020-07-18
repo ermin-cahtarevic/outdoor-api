@@ -33,8 +33,7 @@ RSpec.describe 'Users API', type: :request do
 
       it 'returns failure message' do
         expect(json['message'])
-          .to match("Validation failed: Password can't be blank, Password is too short (minimum is 6 characters),
-          Name can't be blank, Name is too short (minimum is 3 characters), Email can't be blank")
+          .to match("Validation failed: Password can't be blank, Password is too short (minimum is 6 characters), Name can't be blank, Name is too short (minimum is 3 characters), Email can't be blank")
         # This line will fail in the test because the string spans on two lines
         # When it's on one line it passes the test
         # If I leave it on one line rubocop complains
