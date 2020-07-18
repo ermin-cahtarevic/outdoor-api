@@ -73,8 +73,9 @@ rubocop
 
 ### Run tests
 
-Due to the time constraint I was not able to write the tests. 
-That is one feature that I plan to implement in the future.
+```
+bundle exec rspec
+```
 
 <!-- CONTACT -->
 ## Author
